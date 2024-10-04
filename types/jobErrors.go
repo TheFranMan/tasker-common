@@ -1,17 +1,17 @@
 package types
 
 type Retry struct {
-	err error
+	err string
 }
 
 func (r Retry) Error() string {
-	return r.err.Error()
+	return r.err
 }
 
 type Failure struct {
-	err error
+	err string
 }
 
 func (f Failure) Error() string {
-	return f.err.Error()
+	return f.err
 }
