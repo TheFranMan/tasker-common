@@ -1,26 +1,5 @@
 package types
 
-// type Steps string
-
-// var (
-// 	StepsDelete = `[
-// 	{
-// 		"jobs": [
-// 			"service1GetUser"
-// 		],
-// 		"name": "service1_retrieve_user"
-// 	},
-// 	{
-// 		"jobs": [
-// 			"service1DeleteUser",
-// 			"service2DeleteUser",
-// 			"service3DeleteUser"
-// 		],
-// 		"name": "delete_user_accounts"
-// 	}
-// ]`
-// )
-
 type Steps []Step
 
 type Step struct {
