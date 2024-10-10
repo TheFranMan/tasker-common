@@ -53,9 +53,3 @@ func (p *Params) Scan(value interface{}) error {
 
 	return json.Unmarshal(value.([]byte), p)
 }
-
-type Steps []Step
-type Step struct {
-	Name string   `json:"name"`
-	Jobs []string `json:"jobs"`
-}
