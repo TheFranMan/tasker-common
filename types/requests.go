@@ -40,6 +40,10 @@ type Request struct {
 	Completed    sql.NullTime   `db:"completed"`
 }
 
+func (r Request) IsLastStep() bool {
+	return r.Step == len(r.Steps)-1
+}
+
 type Params struct {
 	ID    int    `json:"id"`
 	Email string `json:"email"`
@@ -51,5 +55,5 @@ func (p *Params) Scan(value interface{}) error {
 		return nil
 	}
 
-	return json.Unmarshal(value.([]byte), p)
+	return json.Unmarshal(value.([]uint8), p)
 }

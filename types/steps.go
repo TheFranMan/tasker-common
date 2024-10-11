@@ -1,11 +1,6 @@
 package types
 
-type Steps []Step
-
-type Step struct {
-	Name string   `json:"name"`
-	Jobs []string `json:"jobs"`
-}
+import "encoding/json"
 
 var (
 	StepsDelete = Steps{
@@ -25,3 +20,19 @@ var (
 		},
 	}
 )
+
+type Steps []Step
+
+type Step struct {
+	Name string   `json:"name"`
+	Jobs []string `json:"jobs"`
+}
+
+func (s *Steps) Scan(value interface{}) error {
+	if nil == value {
+		s = &Steps{}
+		return nil
+	}
+
+	return json.Unmarshal(value.([]byte), s)
+}
