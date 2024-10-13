@@ -7,6 +7,11 @@ import (
 )
 
 var (
+	RequestStatusStringNew        RequestStatusString = "Queuing"
+	RequestStatusStringInProgress RequestStatusString = "Inprogress"
+	RequestStatusStringCompleted  RequestStatusString = "Completed"
+	RequestStatusStringFailed     RequestStatusString = "Failed"
+
 	RequestStatusNew        RequestStatus = 0
 	RequestStatusInProgress RequestStatus = 1
 	RequestStatusCompleted  RequestStatus = 2
@@ -24,6 +29,7 @@ var (
 type RequestStatus int
 type JobStatus int
 type ActionType string
+type RequestStatusString string
 
 type Extras map[string]string
 
